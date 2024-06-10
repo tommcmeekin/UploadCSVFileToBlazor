@@ -1,0 +1,31 @@
+﻿@page "/"
+@inject IPeopleRepository PeopleRepository
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>CSV To Sql Database</h3>
+            <hr />
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-outline-primary" @onclick="UploadFile">Upload</button>
+    </div>
+</div>
+
+<div class="col-12 mt-4 text-center ">
+    <p>@FormCompletedText</p>
+</div>
+
+@code{
+    public string FormCompletedText { get; set; } = "";
+
+    void UploadFile()
+    {
+        var result = PeopleRepository.UploadPeopleAsync();
+        FormCompletedText = $"System Updated";
+    }
+}
