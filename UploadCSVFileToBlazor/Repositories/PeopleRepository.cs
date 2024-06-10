@@ -11,7 +11,7 @@ public class PeopleRepository(AppDbContext appDbContext) : IPeopleRepository
     private readonly AppDbContext _appDbContext = appDbContext;
     public List<Employee> employees = [];
 
-    private readonly string inputFile = @"C:\Users\tommc\OneDrive\Desktop\csv_import\people-100000.csv";
+    private readonly string inputFile = @"Your File Path";
 
     public async Task<bool> UploadPeopleAsync()
     {
